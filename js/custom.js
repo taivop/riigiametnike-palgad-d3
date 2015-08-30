@@ -86,7 +86,7 @@ ready = function(nodes) {
 
     var infobar = d3.select("#infobar");
 
-    d3.select("body")
+    svg
         .on("mousedown", mousedown);
 
     node.on("mouseenter", function(d) {
