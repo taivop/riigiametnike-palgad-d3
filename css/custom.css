@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+}
+
+#infobar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: "Helvetica"
+}
+
+#infobar li {
+    display: inline;
+    margin: 0px 10px;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: #3567cc;
+}
