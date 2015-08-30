@@ -32,7 +32,7 @@ ready = function(nodes) {
         e = d.documentElement,
         g = d.getElementsByTagName('body')[0],
         width = w.innerWidth || e.clientWidth || g.clientWidth,
-        height = w.innerHeight|| e.clientHeight|| g.clientHeight;
+        height = 0.9 * (w.innerHeight|| e.clientHeight|| g.clientHeight);
 
     nodes = nodes.filter(function(d) { return d.Tüüp == "Riigiasutus";})
     nodes = getRandomSubarray(nodes, 1000);
@@ -41,11 +41,12 @@ ready = function(nodes) {
 
     // Create foci
     foci = {}
+    foci_margin = 0.05;
     for(a in asutused) {
         asutuse_nimi = asutused[a];
         foci[asutuse_nimi] = {
-            x_rel: Math.random() * 0.8 + 0.1,
-            y_rel: Math.random() * 0.8 + 0.1,
+            x_rel: Math.random() * (1 - 2 * foci_margin) + foci_margin,
+            y_rel: Math.random() * (1 - 2 * foci_margin) + foci_margin,
         }
     }
 
@@ -63,7 +64,7 @@ ready = function(nodes) {
     var force = d3.layout.force()
         .nodes(nodes)
         .size([width, height])
-        .charge(-2)
+        .charge(-15)
         .on("tick", tick)
         .start();
 
@@ -101,7 +102,7 @@ ready = function(nodes) {
     })
 
     function tick(e) {
-        var k = .1 * e.alpha;
+        var k = 1 * e.alpha;
 
         // Push nodes toward their designated focus.
         nodes.forEach(function(o, i) {
@@ -144,5 +145,5 @@ ready = function(nodes) {
 
         force.resume()
     }
-    window.onresize = updateWindow;
+    //window.onresize = updateWindow;
 }
