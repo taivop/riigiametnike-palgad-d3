@@ -90,15 +90,21 @@ ready = function(nodes) {
         .on("mousedown", mousedown);
 
     node.on("mouseenter", function(d) {
+        // Asutus
         infobar.select("#asutus")
             .text(d.Asutus)
+        // Ametikoht
         infobar.select("#ametikoht")
             .text(d.Ametikoht)
+        // Palk
         infobar.select("#palk")
             .text(d.Palk + "€")
             .style("color", fill(d.Palk))
-        infobar.select("#nimi")
-            .text(d.Nimi)
+        // Nimi
+        if(d.Nimi == "NA")
+            infobar.select("#nimi").text("---")
+        else
+            infobar.select("#nimi").text(d.Nimi)
     })
 
     function tick(e) {
