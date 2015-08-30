@@ -1,0 +1,5 @@
+data/*
+.idea
+analysis/data/*
+.Rhistory
+.DS_Store
