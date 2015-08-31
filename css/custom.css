@@ -40,6 +40,10 @@ html, body {
     padding: 0px 5px 0px 10px;
 }
 
+#bottombar {
+    margin-bottom: 10px;
+}
+
 a:link, a:visited, a:hover, a:active {
     text-decoration: underline;
     color: #8ea3cc;;
