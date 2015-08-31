@@ -39,6 +39,9 @@ ready = function(nodes_all) {
     if(window.mobilecheck())
         node_max_count = 500;
 
+    d3.select("#node_max_count")
+        .text(node_max_count)
+
     var w = window,
         d = document,
         e = d.documentElement,
