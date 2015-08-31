@@ -2,6 +2,10 @@ body {
     background-color: black;
 }
 
+#infobar {
+    min-height: 2.5em;
+}
+
 #infobar ul {
     list-style-type: none;
     margin: 0;
