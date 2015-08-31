@@ -11,8 +11,35 @@ function getRandomSubarray(arr, size) {
 }
 
 
+// Get and unzip data file
+JSZipUtils.getBinaryContent('data/palgad_riik.csv.zip', function(err, data) {
+    if(err) {
+        throw err; // or handle err
+    }
 
-var dsv = d3.dsv(",", "text/plain");
+    var zip = new JSZip(data);
+    csv_string = zip.file("palgad_riik.csv").asText();
+
+    // Load data
+    rowParser = function(d) {
+        return {
+            Asutus: d.Asutus,
+            Palk: +d.Põhipalk,
+            Nimi: d.Nimi,
+            Tüüp: d.Tüüp,
+            Ametikoht: d.Ametikoht
+        }
+    }
+
+    // Parse csv
+    var dsv = d3.dsv(",", "text/plain");
+    var rows = dsv.parse(csv_string, rowParser)
+    // Fire away
+    ready(rows)
+});
+
+
+/*var dsv = d3.dsv(",", "text/plain");
 dsv("data/palgad_riik.csv", function(d) {
     return {
         Asutus: d.Asutus,
@@ -23,7 +50,7 @@ dsv("data/palgad_riik.csv", function(d) {
     }
 }, function(error, rows) {
     ready(rows);
-})
+}*/
 
 ready = function(nodes_all) {
     // http://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
