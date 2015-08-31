@@ -6,7 +6,7 @@ body {
     min-height: 2.5em;
 }
 
-#infobar ul {
+#infobar ul, #bottombar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -15,6 +15,12 @@ body {
 }
 
 #infobar li {
+    display: inline;
+    margin: 0px 10px;
+    white-space: nowrap;
+}
+
+#bottombar li, #bottombar p {
     display: inline;
     margin: 0px 10px;
     white-space: nowrap;
@@ -34,6 +40,11 @@ body {
 }
 
 a:link, a:visited, a:hover, a:active {
+    text-decoration: underline;
+    color: #8ea3cc;;
+}
+
+#infobar li#taivo a {
     text-decoration: none;
     color: #3567cc;
 }

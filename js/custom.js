@@ -32,7 +32,7 @@ ready = function(nodes_all) {
         e = d.documentElement,
         g = d.getElementsByTagName('body')[0],
         width = 0.95 * w.innerWidth || e.clientWidth || g.clientWidth,
-        height = 0.9 * (w.innerHeight|| e.clientHeight|| g.clientHeight);
+        height = 0.95 * (w.innerHeight|| e.clientHeight|| g.clientHeight);
 
     asutused = d3.set(nodes_all.map(function(d) { return d.Asutus; })).values();
 
@@ -67,7 +67,7 @@ ready = function(nodes_all) {
             .on("tick", tick)
             .start();
 
-        var svg = d3.select("body").append("svg")
+        var svg = d3.select("body").select("svg")
             .attr("width", width)
             .attr("height", height)
 
