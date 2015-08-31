@@ -38,7 +38,7 @@ ready = function(nodes_all) {
 
     // Create foci
     foci = {}
-    foci_margin = 0.05;
+    foci_margin = 0.1;
     for(a in asutused) {
         asutuse_nimi = asutused[a];
         foci[asutuse_nimi] = {
@@ -50,20 +50,20 @@ ready = function(nodes_all) {
     var createPlot = function(nodes) {
 
         //var fill = d3.scale.category20b();
-        var salaryDomain =  [300, 600, 1000, 2000, 6000];
-        fillScale = d3.scale.quantile()
+        var salaryDomain =  [300, 600, 1000, 2000, 3000];
+        fillScale = d3.scale.linear()
             .domain(salaryDomain)
             .range(["#d7191c", "#fdae61", "#ffffbf", "#a6d96a", "#1a9641"].reverse()); // red-green
         //.range(["#fff7ec", "#fc8d59", "#d7301f", "#b30000", "#7f0000"]); // white-red
 
-        sizeScale = d3.scale.quantile()
+        sizeScale = d3.scale.linear()
             .domain(salaryDomain)
-            .range([1, 1, 1, 2, 3]);
+            .range([1, 1, 2, 3, 4]);
 
         force = d3.layout.force()
             .nodes(nodes)
             .size([width, height])
-            .charge(-15)
+            .charge(function(d) {return - d.Palk / 1000 * 10})
             .on("tick", tick)
             .start();
 
