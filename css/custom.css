@@ -17,6 +17,7 @@ body {
 #infobar li {
     display: inline;
     margin: 0px 10px;
+    white-space: nowrap;
 }
 
 #infobar select {
