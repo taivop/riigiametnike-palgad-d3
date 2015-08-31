@@ -123,8 +123,9 @@ ready = function(nodes_all) {
                 infobar.select("#nimi").text(d.Nimi)
         }
 
-        svg
-            .on("mousedown", mousedown);
+        // If not on mobile, add mousedown event
+        if(!window.mobilecheck())
+            svg.on("mousedown", mousedown);
 
         svg.selectAll(".node").on("mouseenter", mouseover);
 
