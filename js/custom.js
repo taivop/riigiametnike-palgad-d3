@@ -31,7 +31,7 @@ ready = function(nodes_all) {
         d = document,
         e = d.documentElement,
         g = d.getElementsByTagName('body')[0],
-        width = w.innerWidth || e.clientWidth || g.clientWidth,
+        width = 0.95 * w.innerWidth || e.clientWidth || g.clientWidth,
         height = 0.9 * (w.innerHeight|| e.clientHeight|| g.clientHeight);
 
     asutused = d3.set(nodes_all.map(function(d) { return d.Asutus; })).values();
