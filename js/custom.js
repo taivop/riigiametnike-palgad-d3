@@ -13,7 +13,7 @@ function getRandomSubarray(arr, size) {
 
 
 var dsv = d3.dsv(",", "text/plain");
-dsv("data/palgad.csv", function(d) {
+dsv("data/palgad_riik.csv", function(d) {
     return {
         Asutus: d.Asutus,
         Palk: +d.Põhipalk,
