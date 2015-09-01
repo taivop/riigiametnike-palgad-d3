@@ -69,12 +69,15 @@ ready = function(nodes_all) {
     d3.select("#node_max_count")
         .text(node_max_count)
 
+    var rel_height = 0.85;
+    var rel_width = 0.95;
+
     var w = window,
         d = document,
         e = d.documentElement,
         g = d.getElementsByTagName('body')[0],
-        width = 0.95 * w.innerWidth || e.clientWidth || g.clientWidth,
-        height = 0.95 * (w.innerHeight|| e.clientHeight|| g.clientHeight);
+        width = rel_width * (w.innerWidth || e.clientWidth || g.clientWidth),
+        height = rel_height * (w.innerHeight|| e.clientHeight|| g.clientHeight);
 
     asutused = d3.set(nodes_all.map(function(d) { return d.Asutus; })).values();
 
