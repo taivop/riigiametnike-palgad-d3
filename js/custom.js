@@ -169,6 +169,8 @@ ready = function(nodes_all) {
             svg.on("mousedown", mousedown);
 
         svg.selectAll(".node").on("mouseenter", mouseover);
+        svg.selectAll(".node").on("touchstart", mouseover);
+
 
         function tick(e) {
             var k = 1 * e.alpha;
