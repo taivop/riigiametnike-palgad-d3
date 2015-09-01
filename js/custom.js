@@ -76,7 +76,7 @@ ready = function(nodes_all) {
         .text(node_max_count)
 
     var rel_height = 0.85;
-    var rel_width = 0.95;
+    var rel_width = 1;
 
     var w = window,
         d = document,
@@ -89,7 +89,7 @@ ready = function(nodes_all) {
 
     // Create foci
     foci = {}
-    foci_margin = 0.1;
+    foci_margin = 0.05;
     for(a in asutused) {
         asutuse_nimi = asutused[a];
         foci[asutuse_nimi] = {
