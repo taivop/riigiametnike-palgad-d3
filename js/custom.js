@@ -62,9 +62,15 @@ ready = function(nodes_all) {
 
     node_max_count = 1000;
 
-    // Decrease # of nodes for mobile devices
+    // --- MOBILE SPECIAL CASES ---
+    // Decrease # of nodes for mobile
     if(window.mobilecheck())
         node_max_count = 500;
+
+    // Change hint copy for mobile
+    if(window.mobilecheck())
+        d3.select("#asutus").text("Puuduta mõnd punkti, et näha vastava ametniku infot.")
+
 
     d3.select("#node_max_count")
         .text(node_max_count)
