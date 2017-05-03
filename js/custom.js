@@ -18,7 +18,7 @@ JSZipUtils.getBinaryContent('data/palgad_riik_2017.csv.zip', function(err, data)
     }
 
     var zip = new JSZip(data);
-    csv_string = zip.file("palgad_riik.csv").asText();
+    csv_string = zip.file("palgad_riik_2017.csv").asText();
 
     // Load data
     rowParser = function(d) {
