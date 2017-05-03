@@ -12,7 +12,7 @@ function getRandomSubarray(arr, size) {
 
 
 // Get and unzip data file
-JSZipUtils.getBinaryContent('data/palgad_riik.csv.zip', function(err, data) {
+JSZipUtils.getBinaryContent('data/palgad_riik_2017.csv.zip', function(err, data) {
     if(err) {
         throw err; // or handle err
     }
